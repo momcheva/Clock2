@@ -1,0 +1,75 @@
+.clock {
+    border-radius: 20%;
+    background: #DDD url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+    /*background-size: 88%*/
+    height: auto;
+    padding-bottom: 31%;
+    position: relative;
+    justify-content: center;
+    width: 50%; /*50%*/
+    box-sizing: border-box;
+}
+
+.clock.simple::after {
+    background: #DDD;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 5%;
+    height: 5%;
+    z-index: 10;
+}
+
+.minutes-container, .hours-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*box-sizing: border-box;*/
+}
+.hours {
+    background: #000;
+    height: 20%;
+    left: 49.75%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 0.9%;
+    box-sizing: border-box;
+}
+.minutes{
+    background: #000;
+    height: 40%;
+    left: 50%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 0.5%;
+    box-sizing: border-box;
+}
+
+/*the animation code */
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }
+
+}
+
+/*.hours-container {
+    animation: rotate 43200s 1 linear;
+}1
+*/
+
+.minutes-container {
+    animation: rotate 45s 1 linear;
+}
